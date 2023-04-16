@@ -19,10 +19,10 @@
     "author": "Oleksii Segodin",
     "license": "ISC",
     "devDependencies": {
-        "electron": "^15.1.0",
-        "electron-builder": "^22.11.7",
+        "electron": "^24.1.2",
+        "electron-builder": "^24.2.1",
         "electron-reload": "^2.0.0-alpha.1",
-        "nodemon": "^2.0.13"
+        "nodemon": "^2.0.22"
     },
     "build": {
         "appId": "nbsp-ace",
@@ -30,18 +30,18 @@
             "buildResources": "./img"
         },
         "files": [
-             "index.html",
-             "package.json",
-             "main.js",
-             "./css",
-             "./fonts",
-             "./img",
-             "./js",
-             "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme,test,__tests__,tests,powered-test,example,examples,*.d.ts}",
-             "!**/node_modules/.bin",
-             "!**/*.{o,hprof,orig,pyc,pyo,rbc}",
-             "!**/._*",
-             "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,__pycache__,thumbs.db,.gitignore,.gitattributes,.editorconfig,.flowconfig,.yarn-metadata.json,.idea,appveyor.yml,.travis.yml,circle.yml,npm-debug.log,.nyc_output,yarn.lock,.yarn-integrity}"
+            "index.html",
+            "package.json",
+            "main.js",
+            "./css",
+            "./fonts",
+            "./img",
+            "./js",
+            "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme,test,__tests__,tests,powered-test,example,examples,*.d.ts}",
+            "!**/node_modules/.bin",
+            "!**/*.{o,hprof,orig,pyc,pyo,rbc}",
+            "!**/._*",
+            "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,__pycache__,thumbs.db,.gitignore,.gitattributes,.editorconfig,.flowconfig,.yarn-metadata.json,.idea,appveyor.yml,.travis.yml,circle.yml,npm-debug.log,.nyc_output,yarn.lock,.yarn-integrity}"
         ],
         "win": {
             "target": [
