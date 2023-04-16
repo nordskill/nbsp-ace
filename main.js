@@ -1,5 +1,4 @@
-const { BrowserWindow, app, protocol } = require('electron');
-const path = require('path');
+const { BrowserWindow, app } = require('electron');
 const project = require('./package.json');
 
 
@@ -30,19 +29,13 @@ if (process.env.NODE_ENV === 'development') {
 
 app.whenReady().then(() => {
 
-    protocol.registerFileProtocol('atom', (request, callback) => {
-        const url = request.url.substr(7);
-        callback({ path: path.normalize(`${__dirname}/${url}`) });
-    })
-
     const win = new BrowserWindow(windowOptions);
 
     if (process.env.NODE_ENV === 'development') {
         win.webContents.openDevTools();
     } else {
-        // win.setMenu(null);
+        win.setMenu(null);
     }
-
 
     win.loadFile('index.html');
     win.once('ready-to-show', win.show);
