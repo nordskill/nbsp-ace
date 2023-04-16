@@ -1,0 +1,59 @@
+{
+    "name": "nbsp-ace",
+    "productName": "NBSPace",
+    "version": "1.0.2",
+    "description": "Desktop app which inserts non-breaking spaces into the text and makes some other appearance improvements.",
+    "keywords": [],
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "dev": "nodemon --ignore ./js/ --exec electron .",
+        "startw": "set NODE_ENV=production&& electron .",
+        "devw": "set NODE_ENV=development&& nodemon --ignore ./js/ --exec electron .",
+        "static": "browser-sync start --server --files './'",
+        "sync": "browser-sync start --localOnly --files './'",
+        "sass": "sass --watch ./sass/master.scss ./css/master.css --style compressed",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "author": "Oleksii Segodin",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^15.1.0",
+        "electron-builder": "^22.11.7",
+        "electron-reload": "^2.0.0-alpha.1",
+        "nodemon": "^2.0.13"
+    },
+    "build": {
+        "appId": "nbsp-ace",
+        "directories": {
+            "buildResources": "./img"
+        },
+        "files": [
+             "index.html",
+             "package.json",
+             "main.js",
+             "./css",
+             "./fonts",
+             "./img",
+             "./js",
+             "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme,test,__tests__,tests,powered-test,example,examples,*.d.ts}",
+             "!**/node_modules/.bin",
+             "!**/*.{o,hprof,orig,pyc,pyo,rbc}",
+             "!**/._*",
+             "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,__pycache__,thumbs.db,.gitignore,.gitattributes,.editorconfig,.flowconfig,.yarn-metadata.json,.idea,appveyor.yml,.travis.yml,circle.yml,npm-debug.log,.nyc_output,yarn.lock,.yarn-integrity}"
+        ],
+        "win": {
+            "target": [
+                "nsis"
+            ]
+        },
+        "nsis": {
+            "oneClick": true,
+            "allowToChangeInstallationDirectory": false
+        },
+        "mac": {
+            "category": "nbsp-ace"
+        }
+    }
+}

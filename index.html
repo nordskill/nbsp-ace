@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="css/master.css">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="texts">
+                <div class="left_header">
+                    <label for="special">Don't break lines on:</label>
+                    <input type="text" id="special">
+                </div>
+                <div class="settings">
+                    <button type="button" name="copy">Copy</button>
+                    <label>
+                        <input type="checkbox" name="show_source" checked>
+                        <span>Show hidden symbols</span>
+                    </label>
+                </div>
+                <textarea name="input"></textarea>
+                <textarea name="output"></textarea>
+            </div>
+        </div>
+        <script src="./js/gn.js"></script>
+    </body>
+</html>

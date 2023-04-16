@@ -1,0 +1,169 @@
+@import '_fonts.scss';
+
+$col-bg: #EEE;
+$font: 'Roboto', sans-serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $col-bg;
+    font-family: $font;
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+.texts {
+    padding: 0 3em 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4em auto;
+    grid-column-gap: 2em; 
+    min-height: 100vh;
+
+    justify-items: center;
+    align-items: center;
+
+    textarea {
+        font-family: $font;
+        line-height: 1.4;
+        font-size: 16px;
+        padding: 1em 1.4em;
+        resize: vertical;
+        border-radius: 5px;
+        border: thin solid silver;
+        outline: none;
+        width: 100%;
+        height: 100%;
+
+        &[name="input"],
+        &[name="output"] {
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+    }
+
+}
+
+.left_header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+#special {
+    line-height: 1.4;
+    padding: 0.2em .5em;
+    font-family: $font;
+    font-size: 16px;
+    resize: vertical;
+    border-radius: 5px;
+    border: thin solid silver;
+    outline: none;
+}
+
+
+
+.settings {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+
+    label {
+
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+        cursor: pointer;
+    
+        input {
+            display: inline-block;
+            width: 1.2em;
+            height: 1.2em;
+        }
+    
+        span {
+            padding-top: 2px;
+            display: inline-block;
+        }
+    
+    }
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: deepskyblue;
+    letter-spacing: 0.025em;
+    border-radius: 3px;
+    border: 0;
+    color: #FFF;
+    font-family: $font;
+    font-size: 16px;
+    height: 2em;
+    padding: 0 23px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+    transition: filter 0.15s ease-out;
+
+    &:hover {
+        filter: brightness(0.8);
+        transition: filter 0.15s ease-out;
+    }
+
+    &.success {
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            left: 0;
+            height: 22px;
+            width: 22px;
+            opacity: 0;
+            background: url(../img/checkmark.svg);
+            animation: pop 1s cubic-bezier(.12, .89, 0, 1) 0s, fade 0.5s cubic-bezier(.5, 0, 0, 1) 1s;
+        }
+
+    }
+
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -50%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(-35px, -50%, 0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        transform: translate3d(-35px, -50%, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-35px, -100%, 0);
+    }
+}
